@@ -12,7 +12,7 @@ def enhance_with_gfpgan(input_image_path, upscale=2):
     arch = 'clean'
     channel_multiplier = 2
     model_name = 'GFPGANv1.4'
-    model_path = 'gfpgan/weights/GFPGANv1.4.pth'  # Укажите путь к модели
+    model_path = 'GFPGAN/gfpgan/weights/GFPGANv1.4.pth'  # Укажите путь к модели
     bg_upsampler = None  # Можно настроить, если нужно улучшение фона
 
     # Загрузка модели
