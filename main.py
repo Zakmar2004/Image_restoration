@@ -5,19 +5,17 @@ import io
 import os
 import urllib.request
 
-weights_check_path = "GFPGAN/gfpgan/weights/GFPGANv1.4.pth"
 weights_download_path = "GFPGAN/experiments/pretrained_models/GFPGANv1.4.pth"
 download_url = "https://github.com/TencentARC/GFPGAN/releases/download/v1.3.0/GFPGANv1.4.pth"
+model_path = 'GFPGAN/gfpgan/weights/GFPGANv1.4.pth'
 
-if not os.path.exists(weights_check_path):
-    print(f"Weights not found at {weights_check_path}. Downloading to {weights_download_path}...")
-
+if not os.path.exists(model_path):
+    print(f"Model not found. Downloading to {weights_download_path}...")
     os.makedirs(os.path.dirname(weights_download_path), exist_ok=True)
-
     urllib.request.urlretrieve(download_url, weights_download_path)
-    print(f"Weights downloaded and saved to {weights_download_path}.")
+    print(f"Model downloaded successfully to {weights_download_path}.")
 else:
-    print(f"Weights already exist at {weights_check_path}.")
+    print(f"Model found at: {model_path}")
 
 st.title("Portrait Enhancer")
 st.write("Enhance face image resolution using GFPGAN!")
