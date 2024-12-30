@@ -2,6 +2,22 @@ import streamlit as st
 from PIL import Image
 from gfpgan_inference import enhance_with_gfpgan
 import io
+import os
+import urllib.request
+
+weights_check_path = "GFPGAN/gfpgan/weights/GFPGANv1.4.pth"
+weights_download_path = "GFPGAN/experiments/pretrained_models/GFPGANv1.4.pth"
+download_url = "https://github.com/TencentARC/GFPGAN/releases/download/v1.4/GFPGANv1.4.pth"
+
+if not os.path.exists(weights_check_path):
+    print(f"Weights not found at {weights_check_path}. Downloading to {weights_download_path}...")
+
+    os.makedirs(os.path.dirname(weights_download_path), exist_ok=True)
+
+    urllib.request.urlretrieve(download_url, weights_download_path)
+    print(f"Weights downloaded and saved to {weights_download_path}.")
+else:
+    print(f"Weights already exist at {weights_check_path}.")
 
 st.title("Portrait Enhancer")
 st.write("Enhance face image resolution using GFPGAN!")
