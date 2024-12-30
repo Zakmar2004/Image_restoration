@@ -1,2 +1,5 @@
-freeglut3-dev
-libgtk2.0-dev
+opencv-python
+opencv-python-headless
+libgl1-mesa-glx
+libglib2.0-0
+
