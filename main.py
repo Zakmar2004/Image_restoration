@@ -7,7 +7,7 @@ import urllib.request
 
 weights_check_path = "GFPGAN/gfpgan/weights/GFPGANv1.4.pth"
 weights_download_path = "GFPGAN/experiments/pretrained_models/GFPGANv1.4.pth"
-download_url = "https://github.com/TencentARC/GFPGAN/releases/download/v1.4/GFPGANv1.4.pth"
+download_url = "https://github.com/TencentARC/GFPGAN/releases/download/v1.3.0/GFPGANv1.4.pth"
 
 if not os.path.exists(weights_check_path):
     print(f"Weights not found at {weights_check_path}. Downloading to {weights_download_path}...")
